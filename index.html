@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+  <head>
+
+
+
+
+    <!-- Compiled and minified CSS -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+      <link rel="shortcut icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
+      <link rel="shortcut icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
+      <link rel="manifest" href="./icons/site.webmanifest">
+      <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#5bbad5">
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+
+        <!-- Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+
+
+       <!-- Compiled and minified JavaScript -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+       <!-- d3 for active work -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js">
+
+       </script>
+
+       </script>
+
+      <style media="screen">
+        body {
+          font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+          background-image: linear-gradient(#BFC1B8, #FFF);
+          height: 1000px;
+        }
+        .fm-pink {
+          background-color: #EDBFC6;
+        }
+        .fm-beige {
+          background-color: #AF8D86;
+        }
+        .fm-lt-brown {
+          background-color: #5F4842;
+        }
+        .fm-dk-brown {
+          background-color: #432E36;
+        }
+        .fm-black {
+          background-color: #260C1A;
+        }
+
+        /* Rules for sizing the icon. */
+        .material-icons.md-18 { font-size: 18px; }
+        .material-icons.md-24 { font-size: 24px; }
+        .material-icons.md-36 { font-size: 36px; }
+        .material-icons.md-48 { font-size: 48px; }
+
+        /* Rules for using icons as black on a light background. */
+        .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+        .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+        /* Rules for using icons as white on a dark background. */
+        .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+        .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+        .clickable {
+          cursor: pointer;
+        }
+
+        a.heavy-link {
+          font-size: 24px;
+          font-color: #1a1a1a;
+          color: #1a1a1a;
+          text-decoration: underline;
+        }
+
+        .vertical-center {
+          position: relative;
+          top: -20px;
+        }
+
+        .nav-tab:hover {
+          background-color: #DDD;
+        }
+
+        .active {
+          display: block;
+          opacity: 1;
+          margin: 4em;
+          -webkit-animation-name: showsection; /* Safari 4.0 - 8.0 */
+          -webkit-animation-duration: 1.5s; /* Safari 4.0 - 8.0 */
+          animation-name: showsection;
+          animation-duration: 1.5s;
+        }
+
+        .inactive {
+          display: none;
+        }
+
+        .plan-label {
+          position: relative;
+          top: -40px;
+          font-weight: bold;
+          font-size: large;
+          color: #FFF;
+        }
+
+        .plan-heading {
+          width: 100%;
+          height: 60px;
+        }
+
+        .plan-heading td {
+          width: 20%
+        }
+
+        .plan {
+          width: 250px;
+          border-style: solid;
+          border-width: 2px;
+          border-color: #1a1a1a;
+          margin: 30px;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        ul.bulleted {
+          list-style-type: square;
+          margin-left: 20px;
+        }
+
+        ul.bulleted > li {
+          list-style-type: square;
+        }
+
+        .note {
+          font-size: small;
+        }
+
+        .contact-method {
+          margin: 40px;
+        }
+
+        /* Safari 4.0 - 8.0 */
+      @-webkit-keyframes example {
+        0%   {opacity: 0.0;}
+        25%  {opacity: 0.5;}
+        50%  {opacity: 0.8;}
+        100% {opacity: 1;}
+      }
+
+        /* Standard syntax */
+      @keyframes showsection {
+        0%   {opacity: 0.0;}
+        25%  {opacity: 0.5;}
+        50%  {opacity: 0.8;}
+        100% {opacity: 1;}
+      }
+
+
+
+      </style>
+
+    <meta charset="utf-8">
+    <title>Ginger Fermentation</title>
+  </head>
+  <body>
+
+  <table style="width:100%">
+    <tr>
+      <td class="fm-beige" style="width:100%">
+
+        <ul id="slide-out" class="sidenav">
+          <li><div class="user-view">
+            <!-- <div class="background">
+              <img src="icons/apple-touch-icon.png">
+            </div> -->
+          <img class="circle" src="icons/apple-touch-icon.png">
+            <!-- <a href="#name"><span class="white-text name">John Doe</span></a>
+            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a> -->
+          </div></li>
+          <li class="about-sec-sel"><a class="sidenav-close" href="#!">About</a></li>
+          <li><div class="divider"></div></li>
+          <li class="prod-sec-sel"><a class="waves-effect sidenav-close" href="#!">Products</a></li>
+          <li class="serv-sec-sel"><a class="waves-effect sidenav-close" href="#!">Services</a></li>
+          <li class="contact-sec-sel"><a class="waves-effect sidenav-close" href="#!">Contact</a></li>
+        </ul>
+        <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i class="material-icons md-48 md-light">menu</i></a>
+
+
+      </td>
+    </tr>
+  </table>
+
+<!-- Large Format Tabs -->
+<p></p>
+
+<div class="hide-on-med-and-down">
+  <table style="width:100%">
+    <tr>
+      <th style="width:10%"></th>
+      <th class="about-sec-sel nav-tab clickable">About</th>
+      <th class="prod-sec-sel nav-tab clickable">Products</th>
+      <th class="serv-sec-sel nav-tab clickable">Services</th>
+      <th class="contact-sec-sel nav-tab clickable">Contact</th>
+      <th style="width:10%"></th>
+    </tr>
+  </table>
+</div>
+
+
+
+<!-- content --->
+
+<section id="about-sec" class="active content-sec flow-text">
+
+     <h2>About</h2>
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</section>
+
+<section id="prod-sec" class="inactive content-sec flow-text">
+  <h2>Products</h2>
+  Vestibulum non odio nec nisi pulvinar sodales. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam cursus nulla quis sapien eleifend condimentum. Aliquam convallis diam eget velit tincidunt vehicula. Praesent imperdiet aliquet metus, in convallis orci. Aliquam mattis maximus metus sed hendrerit. Vestibulum interdum mattis molestie. Sed in ante ac nisl tempor varius et at dolor. Donec porttitor ornare massa, et varius risus dapibus ut. Phasellus id ex lacus. Cras a tortor nunc.
+</section>
+
+<section id="serv-sec" class="inactive content-sec">
+  <h2>Services</h2>
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+</section>
+
+<section id="contact-sec" class="inactive content-sec flow-text">
+  <h2>Contact</h2>
+
+</section>
+
+</body>
+
+
+<script type="text/javascript">
+
+var elems = document.querySelectorAll('.sidenav');
+var instances = M.Sidenav.init(elems, {});
+
+// Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+var collapsibleElem = document.querySelector('.collapsible');
+var collapsibleInstance = M.Collapsible.init(collapsibleElem, {});
+
+var getHandlerFunction = function(selector) {
+  return function() {
+    d3.selectAll(".content-sec").classed("active", false) //Everything off
+    d3.selectAll(".content-sec").classed("inactive", true)
+    d3.select(selector).classed("inactive", false) // Selected Section is NOT inactive
+    d3.select(selector).classed("active", true)    // It is Active
+  }
+}
+// Fire up the menu:
+d3.selectAll(".about-sec-sel").on("click", getHandlerFunction("#about-sec"))
+d3.selectAll(".prod-sec-sel").on("click", getHandlerFunction("#prod-sec"))
+d3.selectAll(".serv-sec-sel").on("click", getHandlerFunction("#serv-sec"))
+d3.selectAll(".contact-sec-sel").on("click", getHandlerFunction("#contact-sec"))
+
+</script>
+
+</html>
